@@ -15,7 +15,7 @@ export default function AddEditStudent() {
 
   const fetchStudent = async () => {
     try {
-      const res = await axios.get(`http://localhost:5000/students/${id}`);
+      const res = await axios.get(` https://student-db-backend-mongodb-4.onrender.com${id}`);
       setFormData(res.data);
     } catch (err) {
       console.error("Failed to load student:", err);
@@ -37,9 +37,9 @@ export default function AddEditStudent() {
     e.preventDefault();
     try {
       if (id) {
-        await axios.put(`http://localhost:5000/students/${id}`, formData);
+        await axios.put(` https://student-db-backend-mongodb-4.onrender.com${id}`, formData);
       } else {
-        await axios.post("http://localhost:5000/students", formData);
+        await axios.post(" https://student-db-backend-mongodb-4.onrender.com", formData);
       }
       navigate("/students");
     } catch (err) {
