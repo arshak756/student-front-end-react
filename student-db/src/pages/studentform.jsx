@@ -24,12 +24,12 @@ const StudentForm = ({ fetchStudents, editingStudent, setEditingStudent }) => {
     try {
       if (editingStudent) {
         await axios.put(
-          `http://localhost:5000/students/${editingStudent._id}`,
+          `https://student-db-backend-mongodb-4.onrender.com/students/${editingStudent._id}`,
           formData
         );
         setEditingStudent(null);
       } else {
-        await axios.post("http://localhost:5000/students", formData);
+        await axios.post("https://student-db-backend-mongodb-4.onrender.com/students",formData);
       }
       setFormData({ name: "", age: "", course: "", grade: "" });
       fetchStudents();
