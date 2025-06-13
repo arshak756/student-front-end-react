@@ -8,7 +8,7 @@ export default function StudentList() {
 
   const fetchStudents = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/students");
+      const res = await axios.get("https://student-db-backend-mongodb-4.onrender.com/students");
       setStudents(res.data);
     } catch (err) {
       console.error("Error fetching students:", err);
@@ -17,7 +17,7 @@ export default function StudentList() {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/students/${id}`);
+      await axios.delete(`https://student-db-backend-mongodb-4.onrender.com/students/${id}`);
       fetchStudents();
     } catch (err) {
       console.error("Error deleting student:", err);
