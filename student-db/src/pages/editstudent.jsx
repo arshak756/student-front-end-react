@@ -14,7 +14,7 @@ export default function EditStudent() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/students/${id}`)
+      .get(`https://student-db-backend-mongodb-4.onrender.com/students/${id}`)
       .then((res) => setFormData(res.data))
       .catch((err) => console.error("Error fetching student:", err));
   }, [id]);
@@ -29,7 +29,7 @@ export default function EditStudent() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`http://localhost:5000/students/${id}`, formData);
+      await axios.put(`https://student-db-backend-mongodb-4.onrender.com/students/${id}`,formData);
       navigate("/students");
     } catch (err) {
       console.error("Error updating student:", err);
